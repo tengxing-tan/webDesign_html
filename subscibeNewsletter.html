@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Subscribe</title>
+
+  </head>
+  <body>
+    <header></header>
+    <main>
+        <div class="container">
+            <section class="illustion">
+                <div id="sky-bg">
+                  <div id="cloud"></div>
+                  <img
+                    id="deliver-img"
+                    src="image/Mailbox-rafiki.png"
+                    alt="picture of delivering envelope"/>
+                </div>
+            </section>
+
+            <section class="content" >
+                <img
+                  id="logo"
+                  src="https://img.icons8.com/nolan/64/leaf.png"
+                  alt="logo"/>
+                <header id="header">Subscribe to our Newsletter!
+                </header>
+
+                <p id="description">Be the first to get exclusive offers and the latest news
+                </p>
+                <form id="form" action="form.txt">
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                  >
+                  <input
+                    id="subscribe"
+                    type="submit"
+                    value="Subscribe">
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer id="footer">
+      <h1>Recources</h1>
+      <a href="https://storyset.com/communication"
+        target="_blank">Communication illustrations by Storyset</a>
+      <br />
+      <a href="https://icons8.com/icon/VoNUNUvzIPQG/leaf"
+        target="_blank">Leaf icon by Icons8</a>
+    </footer>
+  </body>
+
+<!-- css go -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap');
+
+/* === HIGHLIGHTS === */
+/*
+  1. I can make a cloud
+  2. I can make simple animation
+  3. image and paragraph are separate by grid
+*/
+
+/* HOW i use PADDING and MARGIN*/
+/*
+  padding for container
+  margin for paragraph
+*/
+
+:root {
+/* #4078ff */
+  --domain-color: rgb(64, 123, 255);
+  --variant-a: hsl(221, 94%, 23%);
+
+  --blur-effect: rgba(150,150,150,35%);
+  --main-background: rgba(220,220,220,35%);
+
+/* sky-background and container */
+  --bigRoundCorner: 30px;
+}
+body {
+  margin: 0;
+}
+main {
+  background: var(--main-background);
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background: white;
+  box-shadow: 0px 20px 80px -5px var(--blur-effect);
+
+  border-radius: var(--bigRoundCorner);
+
+  max-width: 750px;
+  height: 400px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+/* pictures */
+.illustion {
+  padding: 7px;
+}
+#cloud {
+  width: 80px;
+  height: 35px;
+
+/* width / 4 */
+  border-radius: 20px;
+
+  background-color: white;
+  position: relative;
+  top: 100px;
+  left: 30px;
+
+  box-shadow: 5px 5px 5px lightgrey;
+}
+#cloud::before {
+  content: "";
+  background: white;
+
+  --square: 55px;
+  width: var(--square);
+  height: var(--square);
+
+  border-radius: 50%;
+
+  position: absolute;
+  left: 9px;
+  bottom: 0px;
+}
+#deliver-img {
+  width: 100%;
+  position: relative;
+  top: 40px;
+  left: 75px;
+}
+#sky-bg {
+  background-color: hsl(204, 36%, 89%);
+  border-radius: var(--bigRoundCorner);
+
+  height: 99%;
+}
+
+/* content */
+.content {
+  padding: 40px 30px 0px;
+  font-family: 'Poppins', sans-serif, arial;
+}
+#logo {
+  background: rgba(220, 220, 220, 0.15);
+  border-radius: 50%;
+  border: solid 0.1px lightgrey;
+}
+#header {
+  font: 500 36px "Poppins", Times;
+  line-height: 1em;
+}
+#description {
+  font: 200 12px 'Poppins', arial;
+  letter-spacing: 0.65px;
+  color: grey;
+}
+/* get email */
+#form {
+  display: flex;
+  flex-direction: column;
+
+  height: 100px;
+  justify-content: space-between;
+}
+#email {
+  display: block;
+  font: 200 12px 'Poppins', arial;
+
+  padding: 0.75em;
+
+  border: solid 0.2px lightgrey;
+  border-radius: 4px;
+}
+#subscribe {
+  display: block;
+  background-color: var(--domain-color);
+
+  border: 0px;
+  border-radius: 6px;
+
+  font-weight: 700;
+  color: white;
+
+  padding: 0.75em;
+}
+
+/* footer */
+#footer {
+  background: black;
+  color: white;
+  text-align: right;
+  line-height: 1.5em;
+
+  padding: 5px;
+  }
+#footer h1 {
+    display: inline;
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+  }
+#footer a {
+  font: 14px monospace;
+  text-decoration: none;
+}
+
+/* focus */
+#email:focus {
+  border-color: transparent;
+}
+
+/* hover */
+#subscribe:hover {
+
+  background: var(--variant-a);
+
+  transition: background-color;
+  transition-duration: 250ms;
+}
+
+/* animation */
+#deliver-img { animation: delivery-ani 1500ms ease-in-out; }
+@keyframes delivery-ani {
+  0% {
+    opacity: 0;
+    left: -100px;
+  }
+  70% {
+    left: 80px;
+  }
+  100% {
+    opacity: 1;
+    left: 75px;
+  }
+}
+#cloud { animation: cloud-ani 1s linear; }
+@keyframes cloud-ani {
+  0% {
+    left: -10px;
+    opacity: 70%;
+  }
+  100% {
+    left: 30px
+  }
+}
+</style>
+</html>
