@@ -1,10 +1,12 @@
 # webDesign_html
 
-Some personal html and css practices. I would like to improve my css skill.
+Some personal html and css practices. I would like to enhance my css skill.
+
+1. [Subscribe Newsletter](https://seventan1234.github.io/webDesign_html/subscribeNewsletter.html)
 
 # References
 
-I am building webpage in HTML by refering a YouTube channel called "DesignSense". They usually use [figma][^figma-mainPage] to build beautiful User Interface(UI) webpage. 
+I am building webpage in HTML by referring a YouTube channel called "DesignSense". They usually use [figma][^figma-mainPage] to build beautiful User Interface(UI) webpage. 
 
 These are further references for me:
 
@@ -15,3 +17,4 @@ These are further references for me:
 ---
 
 [^figma-mainPage]: https://www.figma.com/ "An interesting web design tool"
+
