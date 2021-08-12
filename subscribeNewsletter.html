@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Subscribe</title>
+    <title>Subscribe Newsletter</title>
+    <link rel=icon
+      id="logo"
+      href="https://img.icons8.com/nolan/64/leaf.png"/>
 
   </head>
   <body>
@@ -13,7 +16,7 @@
                 <div id="sky-bg">
                   <div id="cloud"></div>
                   <img
-                    id="deliver-img"
+                    id="delivery-img"
                     src="image/Mailbox-rafiki.png"
                     alt="picture of delivering envelope"/>
                 </div>
@@ -139,7 +142,7 @@ main {
   left: 9px;
   bottom: 0px;
 }
-#deliver-img {
+#delivery-img {
   width: 100%;
   position: relative;
   top: 40px;
@@ -236,7 +239,7 @@ main {
 }
 
 /* animation */
-#deliver-img { animation: delivery-ani 1500ms ease-in-out; }
+#delivery-img { animation: delivery-ani 1500ms ease-in-out; }
 @keyframes delivery-ani {
   0% {
     opacity: 0;
@@ -260,5 +263,40 @@ main {
     left: 30px
   }
 }
+
+/* ------ mobile view ------ */
+@media (max-width: 750px) {
+  main {
+    display: block;
+    width: 99vw;
+    height: auto;
+    background: transparent;
+  }
+  .container {
+    grid-template: 300px auto / 500px;
+
+    height: auto;
+    padding-bottom: 50px;
+  }
+  #delivery-img {
+    width: 300px;
+    animation: delivery-ani-s 1500ms ease-in-out forwards;
+  }
+  #footer {
+    margin-top: 10px;
+  }
+}
+@keyframes delivery-ani-s {
+  0% {
+    opacity: 0;
+    left: -10px;
+  }
+  70% {
+    left: 180px;
+  }
+  100% {
+    opacity: 1;
+    left: 175px;
+  }
 </style>
 </html>
