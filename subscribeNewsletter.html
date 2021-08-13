@@ -12,7 +12,7 @@
     <header></header>
     <main>
         <div class="container">
-            <section class="illustion">
+            <section class="illustration">
                 <div id="sky-bg">
                   <div id="cloud"></div>
                   <img
@@ -91,7 +91,10 @@ body {
 }
 main {
   background: var(--main-background);
+  width: 99vw;
   height: 100vh;
+
+  font-size: 16px;
 
   display: flex;
   justify-content: center;
@@ -113,7 +116,7 @@ main {
 }
 
 /* pictures */
-.illustion {
+.illustration {
   padding: 7px;
 }
 #cloud {
@@ -168,11 +171,11 @@ main {
   border: solid 0.1px lightgrey;
 }
 #header {
-  font: 500 36px "Poppins", Times;
+  font: 500 2.5em "Poppins", Times;
   line-height: 1em;
 }
 #description {
-  font: 200 12px 'Poppins', arial;
+  font: 200 0.8em 'Poppins', arial;
   letter-spacing: 0.65px;
   color: grey;
 }
@@ -186,7 +189,7 @@ main {
 }
 #email {
   display: block;
-  font: 200 12px 'Poppins', arial;
+  font: 200 0.8em 'Poppins', arial;
 
   padding: 0.75em;
 
@@ -269,19 +272,19 @@ main {
 /* ------ mobile view ------ */
 @media (max-width: 750px) or (min-height: 1000px) {
   main {
-    display: block;
-    width: 99vw;
     height: auto;
-    background: transparent;
   }
   .container {
-    grid-template: 300px auto / 500px;
+    height: auto;
+    grid-template: 400px 1fr / 99vw;
 
-    height: 100vh;
     padding-bottom: 50px;
   }
+
   #delivery-img {
-    width: 300px;
+    width: 250px;
+    position: absolute;
+    top: 120px;
     animation: delivery-ani-s 1500ms ease-in-out forwards;
   }
   #cloud { animation: cloud-ani 1s linear; }
@@ -292,14 +295,11 @@ main {
 @keyframes delivery-ani-s {
   0% {
     opacity: 0;
-    left: -10px;
-  }
-  70% {
-    left: 180px;
+    left: 70%;
   }
   100% {
     opacity: 1;
-    left: 175px;
+    left: 30vw;
   }
 </style>
 </html>
