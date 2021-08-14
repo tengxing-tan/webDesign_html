@@ -12,7 +12,7 @@
 <body>
 
   <main class="main-grid">
-    <div class="background">
+    <div class="background erase-corner">
       <nav class="top-nav">
         <ul class="nav-list">
           <li><a class="nav-link"
@@ -81,11 +81,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 /* initial setup */
 * {
-}
-*::before,
-*::after {
-  content: "";
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 a {
@@ -94,63 +91,78 @@ a {
 .main-grid {
   display: grid;
   place-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 /* end initial setup */
 
-/* variables */
-:root {
-  --main-background: #818cf0;
-  --main-background-ii: #656aed;
-}
-/* end variables */
+  /* variables */
+  :root {
+    --main-background: #818cf0;
+    --main-background-ii: #656aed;
+    --domain-color: #6569f5;
+    --variant-light-i: #f5f4f9;
+  }
+  /* end variables */
 
 /* background */
 .background {
-  background: linear-gradient(172deg, var(--main-background) 0%, var(--main-background-ii) 50%, white 50%, white 100%);
+  background: linear-gradient(to right, var(--main-background), var(--main-background-ii));
   
   width: 100%;
-  height: 100vh;
+  height: 65vmin;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
+}
+.erase-corner::after {
+  content: "";
+  position: absolute;
+  top: calc(65vmin - 30vmin);
+  
+  border-top: 30vmin solid transparent;
+  border-right: 100vw solid white;
 }
 /* end background */
 
 /* navigate bar */
-.top-nav {
-  position: fixed;
-  top: 0;
-}
-.nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-.nav-link {
-  text-decoration: none;
-  color: white;
-  font: 700 1.125rem 'Lora', Times;
-  
-  margin-right: 1.4rem;
-}
-.nav-link::before {
-  display: inline-block;
-  border-bottom: 0.125rem solid white;
-  
-  position: relative;
-  top: 0.75rem;
-  width: 20px;
-  left: 20px;
-}
-#geeQ {
-  font-family: 'Manrope', sans-serif;
-  font-size: 2em;
-}
-#geeQ::before {
-  display: none;
-}
+  .top-nav {        
+    position: fixed;    
+    top: 0;
+  }
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    float: right;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font: 700 1.125rem 'Lora', Times;
+    word-wrap: break-word;
+    
+    margin-right: 1.4rem;
+  }
+  .nav-link::before {
+    content: "";
+    display: inline-block;
+    border-bottom: 0.125rem solid white;
+    
+    position: relative;
+    top: 0.75rem;
+    width: 20px;
+    left: 20px;
+  }
+  #geeQ {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2em;
+  }
+  #geeQ::before {
+    content: "";
+    display: none;
+  }
  
 /* end navigate bar */
 </style>
