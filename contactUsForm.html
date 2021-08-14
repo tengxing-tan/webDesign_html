@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<!-- view on youtube -->
 <!-- https://www.youtube.com/watch?v=39SgACJPJO8 -->
+
+<!-- view on dribbble -->
+<!-- https://dribbble.com/shots/16240307-Daily-UI-Design-Challenge-Day-28-Contact-Us -->
 <html>
 <head>
   <title>Contact Us</title>
@@ -12,17 +16,69 @@
       <nav class="top-nav">
         <ul class="nav-list">
           <li><a class="nav-link"
-            id="brand-name"
-            href="">Services</a></li>
+            id="geeQ"
+            href="">GeeQ</a></li>
+          <li><a class="nav-link" href="">Services</a></li>
           <li><a class="nav-link" href="">Products</a></li>
           <li><a class="nav-link" href="">Pricing</a></li>
           <li><a class="nav-link" href="">Contact Us</a></li>
       </nav>
     </div>
+<!-- end top navigate bar -->
+
+    <div class="grid-container">
+
+<!-- left side: form -->
+    <section class="fill-form">
+        <h1 class="title">Get In Touch</h1>
+        <p class="description">We are here for you! How can we help?</p>
+        <form class="flex-container">
+          <input id="name" 
+            type="text" 
+            name="name"
+            placeholder="Enter your name"
+            required/>
+          <input id="email"
+            type="email" 
+            name="email"
+            placeholder="Enter your email"
+            required/>
+          <input id="question" 
+            type="textarea" 
+            name="question"
+            placeholder="Go ahead, we are listening..."
+            required/>
+        </form>
+      </section>
+      
+<!-- right side : illustration-->
+      <div class="illustration">
+        <div class="image"></div>
+        <section class="contact-info">
+          <p>  
+            <img class="contact-icon"
+              src=""
+              alt="location icon"/><span class="description">71 NuSentral</span>
+          </p>
+          <p>  
+            <img class="contact-icon"
+              src=""
+              alt="phone icon"/><span class="description">603-999-1300</span>
+          </p>
+          <p>
+            <img class="contact-icon"
+              src=""
+              alt="email icon"/><span class="description">johndoe123@gmail.com</span>
+          </p>
+        </section>
+    </div>
   </main>
 
 <style>
+/* lora regular, bold */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+/* manrope extra bold */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 /* initial setup */
 * {
 }
@@ -70,6 +126,7 @@ a {
 .nav-list {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 .nav-link {
   text-decoration: none;
@@ -78,15 +135,23 @@ a {
   
   margin-right: 1.4rem;
 }
-.nav-link:before {
+.nav-link::before {
   display: inline-block;
-  width: 20px;
   border-bottom: 0.125rem solid white;
   
   position: relative;
-  top: 0.5rem;
+  top: 0.75rem;
+  width: 20px;
   left: 20px;
 }
+#geeQ {
+  font-family: 'Manrope', sans-serif;
+  font-size: 2em;
+}
+#geeQ::before {
+  display: none;
+}
+ 
 /* end navigate bar */
 </style>
 </body>
