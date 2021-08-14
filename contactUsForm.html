@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=39SgACJPJO8 -->
+<html>
+<head>
+  <title>Contact Us</title>
+</head>
+
+<body>
+
+  <main class="main-grid">
+    <div class="background">
+      <nav class="top-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link"
+            id="brand-name"
+            href="">Services</a></li>
+          <li><a class="nav-link" href="">Products</a></li>
+          <li><a class="nav-link" href="">Pricing</a></li>
+          <li><a class="nav-link" href="">Contact Us</a></li>
+      </nav>
+    </div>
+  </main>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+/* initial setup */
+* {
+}
+*::before,
+*::after {
+  content: "";
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.main-grid {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+}
+/* end initial setup */
+
+/* variables */
+:root {
+  --main-background: #818cf0;
+  --main-background-ii: #656aed;
+}
+/* end variables */
+
+/* background */
+.background {
+  background: linear-gradient(172deg, var(--main-background) 0%, var(--main-background-ii) 50%, white 50%, white 100%);
+  
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* end background */
+
+/* navigate bar */
+.top-nav {
+  position: fixed;
+  top: 0;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font: 700 1.125rem 'Lora', Times;
+  
+  margin-right: 1.4rem;
+}
+.nav-link:before {
+  display: inline-block;
+  width: 20px;
+  border-bottom: 0.125rem solid white;
+  
+  position: relative;
+  top: 0.5rem;
+  left: 20px;
+}
+/* end navigate bar */
+</style>
+</body>
+</html>
