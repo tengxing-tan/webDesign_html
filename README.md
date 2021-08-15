@@ -39,3 +39,9 @@ Apply to CSS
  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 ````
 
+**JetBrains Mono** - 400 - Button
+
+```css
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+```
+
