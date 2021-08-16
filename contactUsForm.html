@@ -263,9 +263,11 @@ a {
   list-style: none;
 }
 .contact-info svg {
-  width: 1.125rem;
-  height: 1.125rem;
+  --length: 2.125rem;
+  width: var(--length);
+  height: var(--length);
   margin-right: 1rem;
+  vertical-align: middle;
 }
 /* end right hand side : illustration */
 
@@ -274,7 +276,6 @@ a {
 /* iPad landscape 1024 */
 @media (max-width: 64rem) {
   .main-grid {
-    border: 5px solid magenta;
     width: 100vw;
     height: auto;
   }
