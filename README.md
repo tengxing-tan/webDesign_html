@@ -5,6 +5,7 @@ Some personal html and css practices. I would like to enhance my css skill.
 1. [Subscribe Newsletter](https://seventan1234.github.io/webDesign_html/subscribeNewsletter.html)
 2. [Dropdown](https://seventan1234.github.io/webDesign_html/dropdown.html)
 3. [Contact Us form](https://seventan1234.github.io/webDesign_html/contactUsForm.html)
+4. [Student Community Home Page](https://seventan1234.github.io/webDesign_html/communityStudentHomePage.html)
 
 ## References
 
