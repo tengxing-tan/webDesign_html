@@ -21,30 +21,41 @@
 
       <p class="username">Tan Teng Xing, 08:00:00 PM MYT</p>
 
-      <div class="calender card left-card">
-        <h2 class="card-header">calender</h2>
+      <nav class="menubar">
+        <ul>
+          <li><a href="#calendar">calendar</a></li>
+          <li><a href="#highlight">highlight</a></li>
+          <li><a href="#cocom">collaboration and communication</a></li>
+          <li><a href="#menu">menu</a></li>
+          <li><a href="#announce">announcement</a></li>
+          <li><a href="#notepad">notepad</a></li>
+        </ul>
+      </nav>
+
+      <div class="calendar card left-card">
+        <h2 class="card-header" id="calendar">calendar</h2>
       </div>
       <div class="highlight card">
-        <h2 class="card-header">highlight</h2>
+        <h2 class="card-header" id="highlight">highlight</h2>
       </div>
 <!--     collaboration and communication (cocom)      -->
       <div class="cocom card right-card">
-        <h2 class="card-header">collaboration and communication</h2>
+        <h2 class="card-header" id="cocom">collaboration and communication</h2>
       </div>
 
 <!--       menu       -->
     <nav class="menu card left-card">
-      <h2 class="card-header">menu</h2>
+      <h2 class="card-header" id="menu">menu</h2>
     </nav>
 
-<!--       annoncement board      -->
+<!--       announcement board      -->
     <main class="announce card">
-      <h2 class="card-header">annoncement board</h2>
+      <h2 class="card-header" id="announce">announcement board</h2>
     </main>
 
 <!--     notepad -->
     <div class="notepad card right-card">
-      <h2 class="card-header">notepad</h2>
+      <h2 class="card-header" id="notepad">notepad</h2>
     </div>
     <footer></footer>
     </div>
@@ -87,11 +98,11 @@ p       { font-family: 'Poppins'; }
   --nav-link: var(--grey-90);
   --paragragh: var(--grey-80);
   --header-color: var(--teal);
-/*  --primary-color: var(--blue);
-  --secondary-color: var(--yellow);*/
+ --primary-color: var(--blue);
+  --secondary-color: var(--yellow);
 
   /*     box-shadow     */
-  --blur-effect: 0 0 50px var(--grey-90);
+  --blur-effect: 0 0 50px 5px var(--grey-90);
 }
 
 /* end variables */
@@ -101,20 +112,22 @@ p       { font-family: 'Poppins'; }
   grid:
     "nav nav nav" auto
     "username username  username" 0.625rem
-    "calender highlight cocom" 13.5rem
+    "calendar highlight cocom" 13.5rem
     "menu announce cocom" 1fr
     "menu announce notepad" 1fr / 12rem 2fr 1fr;
     gap: 1rem;
 
   background: var(--primary-bg);
-  min-height: 100vh;
-  max-width: 100vw;
 }
 .flex-sb {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
+/* hide menubar which only for potrait view */
+.menubar {
+  display: none;
+}
+
 .top-nav {
   grid-area: nav;
 
@@ -135,7 +148,14 @@ p       { font-family: 'Poppins'; }
 .page-title p { text-transform: capitalize; font-size: 0.75rem; }
 
 .nav-list { list-style: none; }
-.nav-link { display: inline-block; margin-right: 2rem;}
+.nav-link {
+  display: inline-block;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+  border-bottom: 5px solid transparent;
+}
 .nav-link a {
   font: 500 0.725rem 'Poppins', arial;
   color: var(--nav-link);
@@ -171,8 +191,8 @@ p       { font-family: 'Poppins'; }
   text-transform: capitalize;
   text-align: center;
 }
-.calender {
-  grid-area: calender;
+.calendar {
+  grid-area: calendar;
 }
 .highlight {
   grid-area: highlight;
@@ -190,10 +210,47 @@ p       { font-family: 'Poppins'; }
   grid-area: notepad;
 }
 
-.card:hover {
-  margin: -0.1rem;
-  z-index: 10;
+
+.nav-link:hover {
+  border-bottom-color: var(--primary-color);
+  transition: all 250ms ease-in;
 }
+.nav-link:active {
+  background: var(--primary-color);
+}
+.card:hover {
+  margin: -0.25rem 0;
+  z-index: 10;
+  transition: all 350ms ease-out;
+}
+
+
+/*     potrait 450    */
+@media (max-width: 28.125rem) {
+  .grid-view {
+    grid:
+      "nav" auto
+      "username" 0.625rem
+      "menubar" 2rem
+      "content" 1fr / 100vw;
+  }
+  .menubar {
+    display: block;
+    grid-area: menubar;
+  }
+  .menubar li {
+    display: block;
+    background: white:
+  }
+  .menubar li a {
+    color: var(--paragraph);
+  }
+  .announce {
+    grid-area: content;
+    height: 10rem;
+  }
+}
+
 </style>
 
 </body>
