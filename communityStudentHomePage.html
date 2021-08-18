@@ -117,6 +117,7 @@ p       { font-family: 'Poppins'; }
     "menu announce notepad" 1fr / 12rem 2fr 1fr;
     gap: 1rem;
 
+  max-width: 100vw;
   background: var(--primary-bg);
 }
 .flex-sb {
@@ -125,7 +126,8 @@ p       { font-family: 'Poppins'; }
 }
 /* hide menubar which only for potrait view */
 .menubar {
-  display: none;
+  position: absolute;
+  right: 100vw;
 }
 
 .top-nav {
@@ -213,7 +215,7 @@ p       { font-family: 'Poppins'; }
 
 .nav-link:hover {
   border-bottom-color: var(--primary-color);
-  transition: all 250ms ease-in;
+  transition: all 150ms ease-in;
 }
 .nav-link:active {
   background: var(--primary-color);
@@ -225,21 +227,74 @@ p       { font-family: 'Poppins'; }
 }
 
 
-/*     potrait 450    */
+/* ===================== potrait 450 ===================== */
 @media (max-width: 28.125rem) {
   .grid-view {
     grid:
-      "nav" auto
+      "nav" 4.75rem
       "username" 0.625rem
       "menubar" 2rem
       "content" 1fr / 100vw;
   }
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+
+    position: relative;
+    top: 4.75rem;
+    left: 100%;
+  }
+  .nav-link {
+    text-align: center;
+    margin: 0.125rem 0;
+    padding: 1rem 2rem;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 8px 8px 8px #d0d3d4, -0.6em 0 0.8em #f8f9f9;
+  }
+/*  somwthing:hover {
+    .nav-link {
+    background: linear-gradient(135deg, var(--teal), var(--darkteal));
+    animation: right-side-overlay  400ms ease-out;
+  }*/
+  @keyframes right-side-overlay {
+    from {
+      position: relative;
+      left: 100%;
+      opacity: 0;
+    }
+    to {
+      left: 0;
+      opacity: 1;
+    }
+  }
+  .nav-link:nth-child(1) {
+    animation-delay: 50ms;
+  }
+  .nav-link:nth-child(2) {
+    animation-delay: 100ms;
+  }
+  .nav-link:nth-child(3) {
+    animation-delay: 150ms;
+  }
+  .nav-link:nth-child(4) {
+    animation-delay: 200ms;
+  }
+
+
   .menubar {
-    display: block;
     grid-area: menubar;
+/*     right: auto; */
+  }
+  .menubar ul {
+    background: black;
+    color: white;
+    height: 3rem;
   }
   .menubar li {
-    display: block;
+    display: inline-block;
     background: white:
   }
   .menubar li a {
