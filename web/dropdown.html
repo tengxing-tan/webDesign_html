@@ -3,7 +3,6 @@
 <!-- https://youtu.be/JdfhPe2uU-w -->
 <html>
 <head>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dropdown</title>
 </head>
@@ -20,30 +19,32 @@
         id="myInput"
         onkeyup="myFunction()"
         placeholder="Search" />
-      <button class="drop-button"
-        type="button">
-        <a href='#myList'>
+      <a class="drop-button" href='#list-section'>
+        <button type="button">
           <i class="fas fa-caret-square-down" aria-hidden="true"></i>
-         </a>
-      </button>
+        </button>
+      </a>
     </div>
     
-    
-    <ul id="myList">
-      <li><p>Adobe Photoshop</p></li>
-      <li><p>Adobe Illustrator</p></li>
-      <li><p>Adobe xd</p></li>
-      <li><p>Adobe After Effects</p></li>
-      <li><p>Adobe Premiere Pro</p></li>
-      <li><p>Figma</p></li>
-      <li><p>ThunderBird</p></li>
-      <li><p>FireFox</p></li>
-      <li><p>Chrome</p></li>
-      <li><p>Edge</p></li>
-      <li><p>Brave</p></li>
-    </ul>
+    <section id="list-section" >
+      <ul id="myList">
+        <li><p>Adobe Photoshop</p></li>
+        <li><p>Adobe Illustrator</p></li>
+        <li><p>Adobe xd</p></li>
+        <li><p>Adobe After Effects</p></li>
+        <li><p>Adobe Premiere Pro</p></li>
+        <li><p>Figma</p></li>
+        <li><p>ThunderBird</p></li>
+        <li><p>FireFox</p></li>
+        <li><p>Chrome</p></li>
+        <li><p>Edge</p></li>
+        <li><p>Brave</p></li>
+      </ul>
+    </section >
   </div>
+<!--   end dropdown container -->
 </div>
+<!-- end grird container -->
 </main>
 
       <!-- === javascript === -->
@@ -84,10 +85,6 @@ function myFunction() {
 
 
 
-
-
-
-
 <!-- ======================== css ============== -->
 <style>
 :root {
@@ -111,6 +108,7 @@ body {
   grid-template:
     "header dropdown" auto / auto 700px;
   align-items: center;
+  margin-top: 2rem; 
 }
 .dropdown-container {
   grid-area: dropdown;
@@ -147,11 +145,14 @@ body {
   padding: 0.75em;
   border: none;
 }
-.drop-button {
+a.drop-button {
+  display: block;
+  float: right;
   width: 10%;
+}
+.drop-button button {
   border: none;
   background: transparent;
-  float: right;
 }
 .drop-button .fa-caret-square-down {
   font-size: 2.125rem;
@@ -172,7 +173,13 @@ body {
 /*     end search bar     */
 
 /* list content */
-#myList {
+#list-section {
+  display: none;
+}
+#list-section:target {
+ display: block;
+}
+  ul#myList {
   max-height: 55vh;
   overflow-y: scroll;
   list-style-type: none;
@@ -214,7 +221,7 @@ body {
     grid-template:
       "header" auto
       "dropdown" auto / 100%;
-}
+  }
   #header {
     margin: 30px auto;
     text-align: center;
@@ -233,7 +240,10 @@ body {
       opacity: 1;
       padding-top: 0;
     }
+  }
 }
 </style>
+
+
 </body>
 </html>
