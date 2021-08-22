@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- === Source === -->
+<!-- https://youtu.be/JdfhPe2uU-w -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dropdown</title>
+</head>
+
+<!-- === html === -->
+
+<body>
+<main>
+<div class="container">
+  <h1 id="header">Favorite<br />Software</h1>
+  <div class="dropdown-container">
+    <div class="search-bar">
+      <input type="text"
+        id="myInput"
+        onkeyup="myFunction()"
+        placeholder="Search" />
+      <button class="drop-button"
+        type="button">
+        <a href='#myList'>
+          <i class="fas fa-caret-square-down" aria-hidden="true"></i>
+         </a>
+      </button>
+    </div>
+    
+    
+    <ul id="myList">
+      <li><p>Adobe Photoshop</p></li>
+      <li><p>Adobe Illustrator</p></li>
+      <li><p>Adobe xd</p></li>
+      <li><p>Adobe After Effects</p></li>
+      <li><p>Adobe Premiere Pro</p></li>
+      <li><p>Figma</p></li>
+      <li><p>ThunderBird</p></li>
+      <li><p>FireFox</p></li>
+      <li><p>Chrome</p></li>
+      <li><p>Edge</p></li>
+      <li><p>Brave</p></li>
+    </ul>
+  </div>
+</div>
+</main>
+
+      <!-- === javascript === -->
+<script src="https://kit.fontawesome.com/06b2bd9377.js" 
+crossorigin="anonymous"></script>
+<script>
+
+// filter list functoin
+function myFunction() {
+  // Declare variables
+  var input, ul, li, filter;
+
+  // assign user input to `filter`
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+
+  // assign existing list to `li`
+  ul = document.getElementById("myList");
+  li = ul.getElementsByTagName("li");
+
+// Loop through all list items, and hide those who don't match the search query
+  var item, txtValue;
+  for (var i = 0; i < li.length; i++) {
+    item = li[i].getElementsByTagName("p")[0];
+    txtValue = item.textContent || item.innerText;
+
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      // user input valid, show item
+      li[i].style.display = "";
+    } else {
+      // invalid, hide item
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<!-- ======================== css ============== -->
+<style>
+:root {
+  --main-background: hsla(170, 90%, 45%, 5%);
+  --domain-color: hsl(170, 90%, 45%);
+  --variant-i: hsla(170, 90%, 45%, 15%);
+  
+  --input-border: var(--domain-color);
+  --blur-effect: 5px 1px 30px hsla(170,90%,30%,15%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-background);
+}
+.container {
+  display: grid;
+  grid-template:
+    "header dropdown" auto / auto 700px;
+  align-items: center;
+}
+.dropdown-container {
+  grid-area: dropdown;
+
+  max-width: 500px;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+/*   padding: 10% 10% 0 0; */
+}
+
+/*     content    */
+#header {
+  grid-area: header;
+  margin-left: 20%;
+  padding: 10px;
+  border-left: 5px solid var(--input-border);
+
+  color: var(--domain-color);
+  font: 700 40px Arial;
+}
+
+.search-bar {
+  display: flex;
+  background: white;
+  border: 2px solid var(--domain-color);
+  border-radius: 12px;
+  box-shadow: var(--blur-effect);
+  padding: 0;
+}
+#myInput {
+  width: 90%;
+  background: transparent;
+  padding: 0.75em;
+  border: none;
+}
+.drop-button {
+  width: 10%;
+  border: none;
+  background: transparent;
+  float: right;
+}
+.drop-button .fa-caret-square-down {
+  font-size: 2.125rem;
+  color: var(--domain-color);
+  background: transparent;
+  transform: rotate(360deg);
+  transition: transform 750ms 300ms ease-out;
+}
+.drop-button:hover { animation: button-ani 100ms linear forwards; }
+@keyframes button-ani {
+  to{
+    transform: scale(1.2);
+  }
+}
+.drop-button:active {
+  visibility: hidden;
+}
+/*     end search bar     */
+
+/* list content */
+#myList {
+  max-height: 55vh;
+  overflow-y: scroll;
+  list-style-type: none;
+  background: white;
+
+  padding: 16px;
+  margin-top: 50px;
+  border-radius: 8px;
+  box-shadow: var(--blur-effect);
+}
+#myList li {
+  padding: 8px;
+  border-radius: 10px;
+  color: #333;
+  line-height: 1.5rem;
+}
+#myList li:hover {
+  background-color: var(--variant-i);
+}
+
+
+/* animation */
+#header { animation: header-ani 1s 200ms ease-out; }
+@keyframes header-ani {
+  0% {
+    color: transparent;
+    padding-right: 60vw;
+  }
+  100% {
+    color: var(--domain-color);
+    border-left: 5px solid var(--input-border);
+    padding-left: 10px;
+  }
+}
+
+/* mobile view */
+@media (max-width: 900px) or (min-height: 1080px) {
+  .container {
+    grid-template:
+      "header" auto
+      "dropdown" auto / 100%;
+}
+  #header {
+    margin: 30px auto;
+    text-align: center;
+  }
+  .dropdown-container {
+    margin: auto;
+    width: 80%;
+    animation: dropdown-ani 1s 200ms ease;
+  }
+  @keyframes dropdown-ani {
+    0% {
+      opacity: 0;
+      padding-top: 30vh;
+    }
+    100% {
+      opacity: 1;
+      padding-top: 0;
+    }
+}
+</style>
+</body>
+</html>

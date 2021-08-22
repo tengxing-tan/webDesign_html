@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- view on youtube -->
+<!-- https://www.youtube.com/watch?v=39SgACJPJO8 -->
+
+<!-- view on dribbble -->
+<!-- https://dribbble.com/shots/16240307-Daily-UI-Design-Challenge-Day-28-Contact-Us -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Contact Us</title>
+</head>
+
+<body>
+
+  <main class="main-grid">
+    <div class="background erase-corner">
+      <nav class="top-nav">
+          <a class="nav-link"
+            id="brand"
+            href="">GeeQ</a>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="">Services</a></li>
+          <li><a class="nav-link" href="">Products</a></li>
+          <li><a class="nav-link" href="">Pricing</a></li>
+          <li><a class="nav-link" href="">Contact Us</a></li>
+      </nav>
+    </div>
+<!-- end top navigate bar -->
+
+    <div class="grid-container">
+
+<!-- left side: form -->
+    <section class="form">
+        <h1 class="title">Get In Touch</h1>
+        <p class="description">We are here for you! How can we help?</p>
+        <form class="flex-container">
+          <input id="name" 
+            type="text" 
+            name="name"
+            placeholder="Enter your name"
+            required/>
+          <input id="email"
+            type="email" 
+            name="email"
+            placeholder="Enter your email"
+            required/>
+          <textarea id="question" 
+            name="question"
+            placeholder="Go ahead, we are listening..."
+            required
+            rows="5"
+            autocheck></textarea>
+          <input id="submit"
+            type="submit"
+            value="Submit"/>
+        </form>
+      </section>
+      
+<!-- right side : illustration-->
+      <div class="illustration flex-container">
+        <img id="image" src="image/undraw_things_to_say_ewwb.svg"/>
+        <section class="contact-info">
+          <ul><li>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 172 172"
+style=" fill:#4a90e2;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#6569f5"><path d="M86,3.44c-30.40325,0 -55.04,24.63676 -55.04,55.04c0,24.65671 13.26532,51.61945 26.31735,72.67672c13.05202,21.05727 26.11578,36.20735 26.11578,36.20735c0.64952,0.75529 1.59452,1.19197 2.59067,1.19712c0.99615,0.00515 1.94562,-0.42172 2.60292,-1.17025c0,0 13.07174,-14.90231 26.12922,-35.83781c13.05748,-20.93546 26.32406,-47.92772 26.32406,-73.07313c0,-30.40324 -24.63675,-55.04 -55.04,-55.04zM86,10.32c26.70075,0 48.16,21.45924 48.16,48.16c0,22.67059 -12.53342,49.00106 -25.27594,69.43156c-10.65581,17.08482 -19.66377,27.94439 -22.86391,31.72594c-3.18443,-3.82274 -12.22088,-14.88395 -22.8975,-32.1089c-12.74797,-20.56673 -25.28265,-46.9213 -25.28265,-69.0486c0,-26.70076 21.45925,-48.16 48.16,-48.16zM51.6,51.6v13.76h13.76v-13.76zM65.36,65.36v13.76h13.76v-13.76zM79.12,65.36h13.76v-13.76h-13.76zM92.88,65.36v13.76h13.76v-13.76zM106.64,65.36h13.76v-13.76h-13.76z"></path></g></g></svg>
+            71 NuSentral
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 172 172"
+style=" fill:#4a90e2;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#6569f5"><path d="M134.2675,161.68c-0.05375,0 -0.1075,0 -0.16125,0c-25.85375,-0.84656 -56.14187,-25.9075 -77.01031,-46.78937c-20.89531,-20.88188 -45.95625,-51.18344 -46.7625,-76.91625c-0.29562,-9.03 21.86281,-25.08781 22.09125,-25.24906c5.75125,-4.00438 12.13406,-2.58 14.75438,1.04812c1.77375,2.45906 18.57062,27.90969 20.39812,30.79875c1.89469,2.99656 1.6125,7.45781 -0.7525,11.9325c-1.30344,2.48594 -5.63031,10.09156 -7.65937,13.63906c2.19031,3.1175 7.98187,10.76344 19.94125,22.72281c11.97281,11.95937 19.60531,17.76437 22.73625,19.95469c3.5475,-2.02906 11.15312,-6.35594 13.63906,-7.65937c4.4075,-2.33813 8.84187,-2.63375 11.86531,-0.77938c3.09063,1.89469 28.47406,18.77219 30.81219,20.39813c1.96187,1.38406 3.225,3.74906 3.48031,6.50375c0.24188,2.78156 -0.61812,5.72437 -2.40531,8.29094c-0.14781,0.215 -16.0175,22.10469 -24.96688,22.10469z"></path></g></g></svg>
+            603-999-1300
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#6569f5"><path d="M28.66667,28.66667c-6.665,0 -12.23843,4.6075 -13.82943,10.77799l71.16276,44.5957l71.20475,-44.46972c-1.548,-6.24217 -7.15625,-10.90397 -13.87142,-10.90397zM14.33333,55.42969v73.57031c0,7.90483 6.4285,14.33333 14.33333,14.33333h114.66667c7.90483,0 14.33333,-6.4285 14.33333,-14.33333v-73.41634l-71.66667,44.74967z"></path></g></g></svg>
+            johndoe123@gmail.com
+          </li></ul>
+        </section>
+    </div>
+  </main>
+
+<style>
+/* lora regular, bold */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+/* manrope extra bold */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+/* initial setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.main-grid {
+  display: grid;
+  place-items: center;
+}
+/* end initial setup */
+
+/* variables */
+:root {
+/*     background-color     */
+  --main-bg-left: #818cf0;
+  --main-bg-right: #656aed;
+  --domain-color: #6569f5;
+  --variant-light-i: #f5f4f9;
+/*       color     */
+  --grey: #666666;
+  --lightgrey: #7a7a7a;
+  --navi-link: #d8dbff;
+/*     shadow     */
+  --blur-effect: 0 20px 80px -5px rgba(150,150,150,35%);
+}
+
+/* end variables */
+
+/* background */
+.background {
+  background: linear-gradient(to right, var(--main-bg-left), var(--main-bg-right));
+  
+  width: 100%;
+  height: 65vmin;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.erase-corner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  
+  border-top: 30vmin solid transparent;
+  border-right: 100vw solid white;
+}
+/* end background */
+
+/* navigate bar */
+  .top-nav {        
+    position: fixed;    
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.3125rem 8rem;
+  }
+  #brand {
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 2em; 
+    float: left;
+}
+  #brand::before {
+    content: "";
+    display: none;
+  }
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center; 
+    justify-content: end;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: var(--navi-link);;
+    font: 700 1.125rem 'Lora', Times;    
+  }
+/*  whiteh underline  */
+  .nav-link::before {
+    content: "";
+    display: inline-block;
+    border-bottom: 0.125rem solid white;
+    
+    position: relative;
+    top: 0.75rem;
+    width: 20px;
+    left: 20px;
+  }
+
+/* end navigate bar */
+
+/* container */
+.grid-container {
+  display: grid;
+  grid: "form illustration" 30rem / 1fr 1fr;
+  
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--blur-effect);
+  margin-top: 6.25rem;
+
+}
+.form {
+  grid-area: form;
+  color: var(--domain-color);
+  
+  padding: 2.125rem;
+}
+.title {
+  font: 800 2rem 'Manrope', sans-serif;
+}
+.description {
+  color: var(--grey);
+  font: 400 1.125rem 'Lora', arial;
+  line-height: 1.25rem;
+  margin-top: 1.4375rem;
+  margin-bottom: 1.5rem;
+}
+/* form as a flex container */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 26.875rem;
+}
+.flex-container input, textarea {
+  background: var(--variant-light-i);
+  color: var(--lightgrey);
+  font: 400 0.75rem 'Lora', arial;
+  
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1.125rem;
+}
+#question {
+  resize: none;
+}
+#submit {
+  background: var(--domain-color);
+  font: 800 1.125rem 'Manrope', arial;
+  color: var(--variant-light-i);
+  
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+
+
+/* right hand side : illustration */
+.illustration {
+  align-items: center;
+  padding: 2.125rem;
+}
+#image {
+  width: 90%;
+  display: block;
+  
+  position: relative;
+  left: 10%;
+  bottom: 10%;
+}
+.contact-info {
+  font: 700 1.125rem / 3rem 'Manrope', arial;
+  color: var(--lightgrey);
+}
+.contact-info ul {
+  list-style: none;
+}
+.contact-info svg {
+  --length: 2.125rem;
+  width: var(--length);
+  height: var(--length);
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+/* end right hand side : illustration */
+
+/*       end for standard landscape view      */
+
+/* iPad landscape 1024 */
+@media (max-width: 64rem) {
+  .main-grid {
+    width: 100vw;
+    height: auto;
+  }
+  .grid-container {
+    grid: 
+      "illustration" 1fr
+      "form" 1fr / 80vw;
+    justify-items: center;
+  }
+  .flex-container {
+    width: 37.5rem;
+    }
+  #image {
+    margin-bottom: 6rem;
+  }
+}
+
+/* potrait 512 */
+@media (max-width: 32rem) {
+    
+}
+</style>
+</body>
+</html>
