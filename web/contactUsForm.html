@@ -58,7 +58,7 @@
       
 <!-- right side : illustration-->
       <div class="illustration flex-container">
-        <img id="image" src="image/undraw_things_to_say_ewwb.svg"/>
+        <img id="image" src="../image/undraw_things_to_say_ewwb.svg"/>
         <section class="contact-info">
           <ul><li>
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -240,7 +240,9 @@ a {
   padding: 0.5rem;
   margin-bottom: 0;
 }
-
+#submit:hover {
+  background: linear-gradient(0deg, var(--main-bg-left), var(--main-bg-right));
+}
 
 /* right hand side : illustration */
 .illustration {
@@ -290,6 +292,12 @@ a {
     }
   #image {
     margin-bottom: 6rem;
+  }
+  #submit {
+    width: 7rem;
+    height: 7rem;
+    align-self: end;
+    border-radius: 50%;
   }
 }
 
