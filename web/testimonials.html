@@ -1,4 +1,8 @@
-<!-- TODO: fix the line 139, top effect is unexpected -->
+<!-- TODO: 
+- profile, name, social media icon
+- button position -->
+
+<!-- DONE: fix the line 139, top effect is unexpected -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,6 +85,7 @@ main {
 	grid-area: testimonials;
 	text-align: center;
 	position: relative;
+	transition: all 500ms ease-in;
 }
 .tabs {
   background: white;
@@ -135,10 +140,14 @@ function plusSlides(n) {
 function showSlides(slidesIndex, mySlides) {
 	// set each slide's rules
 	slidesIndex.forEach( index => {
-		mySlides[index].style.zIndex = i;
-		mySlides[index].style.top = `${i*50}px`; 
-		i--
-	}, i = 3)	
+		mySlides[index].style.zIndex = i; // 3, 2, 1
+		mySlides[index].style.top = `${j*1.95}rem`; // 0, 2.25, 4.5 rem
+		mySlides[index].style.scale= `${100 - (j * 10)}%`; // 100, 90, 80
+		i--;
+		j += (j <= 3)
+      ? 1 
+      : 0;
+	}, i = slidesIndex.length, j = 0)	
 }
 </script>
 </body>
