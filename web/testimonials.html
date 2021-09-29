@@ -15,13 +15,40 @@
   <h1 class="header">What our clients say</h1>
   <section class="testimonials">
     <div class="mySlides">
-      <article class=tabs>1 Quo quibusdam cum molestiae voluptatem necessitatibus maxime. Aut dolor voluptate nihil. Deserunt ullam fugit tempora ea hic eius fugit vel. Sit laboriosam voluptas deserunt sequi.</article>
+      <div class=tabs>
+        <div class="profile-pic"></div>
+        <p class="profile">Jonathan</p>
+        <p class="position">CEO, abc copmpany</p>
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Phasellus id sagittis lacus. Nunc dictum fermentum leo, eleifend convallis neque 
+pulvinar ut. Integer porttitor eget neque vitae venenatis. Quisque pellentesque 
+est sem, sed suscipit felis sodales non. Phasellus ultricies ipsum laoreet, 
+auctor leo non, dignissim lectus. Vivamus ornare laoreet egestas. </blockquote>
+</div>
     </div>
     <div class="mySlides">
-      <article class=tabs>2 necessitatibus maxime. Aut dolor voluptate nihil. Deserunt ullam fugit tempora ea hic eius fugit vel. Sit laboriosam voluptas deserunt sequi.</article>
+      <div class=tabs>
+      <div class="profile-pic"></div>
+        <p class="profile">Soon Kee Lim</p>
+        <p class="position">CCO, abc copmpany</p>
+        <blockquote>Suspendisse consectetur orci vel tortor tempor, in luctus 
+lectus aliquam. Cras aliquam semper cursus. Sed rutrum faucibus turpis. In 
+placerat ac justo id hendrerit. Quisque nec diam eget elit mollis tristique. Nam 
+posuere sodales metus et ullamcorper. Proin imperdiet sem ac rhoncus fermentum. 
+</blockquote>
+</div>
     </div>
     <div class="mySlides">
-      <article class=tabs>3 fugit vel. Sit laboriosam voluptas deserunt sequi.</article>
+      <div class=tabs>
+      <div class="profile-pic"></div>
+        <p class="profile">Tan Teng Xing</p>
+        <p class="position">CFO, abc copmpany</p>
+        <blockquote>Nulla ut mauris ut sem finibus accumsan. In 
+ante ligula, porttitor vel odio vitae, gravida pharetra ex. Maecenas finibus, 
+ante et mattis pellentesque, orci augue tempor nunc, ac aliquam purus velit eget 
+metus. Quisque ante augue, placerat non nunc sit amet, vehicula finibus augue. 
+Nulla convallis diam tellus, ut iaculis nunc varius eu.</blockquote>
+</div>
     </div>    
     <a class="prev tabs-btn" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next tabs-btn" onclick="plusSlides(1)">&#10095;</a>
@@ -40,19 +67,26 @@
 }
 main {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 :root {
 /*   background color  */
   --super-light-blue: #f2f2f3;
 /* text color */
-  --light-blue: #7ea1fb;
-
+  --light-blue-i: #7ea1fb;
+  --light-blue-ii: #496ffd;
+  --light-grey-i: #acacac;
 /*   categories   */
-  --header-color: var(--light-blue);
+  --header-color: var(--light-blue-i);
   --main-bg: var(--super-light-blue);
+  --button-color: var(--light-blue-i);
+  --position-color: var(--light-blue-ii);
+  --quote-color: var(--light-grey-i);
 
   --tabs-shadow: 0 1.6rem 25px -16px #cdd2d2, 0 2rem 50px 4px #d9d9f4;
   --botton-shadow: 0 7px 10px -2px #acacac;
@@ -62,22 +96,33 @@ main {
   color: var(--header-color);
   line-height: 2.65rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 auto 5rem;
 }
 .header::before {
   content: "";
   display: block;
-  border-bottom: 0.25rem solid var(--header-color);
+  border-bottom: 2px solid var(--header-color);
   position: relative;
   top: 3rem;
-  left: 0;
-  right: 0;
   margin: 0 auto;
   width: 5%;
+  animation: break-line-ani 1000ms 100ms ease-in;
+}
+@keyframes break-line-ani {
+  from {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  to {
+    width: 5%;
+  }
 }
 .testimonials {
   display: grid;
-  grid: ". prev-btn testimonials next-btn ." 70vh / 10% 1fr max-content 1fr 10%;
+  grid: ". prev-btn testimonials next-btn ." min-content / 10% 1fr max-content 
+1fr 10%;
   align-items: center;
   justify-items: center;
 }
@@ -88,26 +133,58 @@ main {
 	transition: all 500ms ease-in;
 }
 .tabs {
+  display: grid;
+  grid: 
+    "profile-pic profile" 2.5rem
+    "profile-pic position" 2rem
+   "quote quote" 1fr
+   "icon icon" 1rem / 4.5rem 1fr;
   background: white;
-  width: 30rem;
-  height: 16.5rem;
+  width: 25rem;
+  height: 14.5rem;
   text-align: center;
   border-radius: 1.125rem;
   box-shadow: var(--tabs-shadow);
- 	padding: 3.5rem 4.5rem;
- 	
- 	margin-top: 1rem;
+  
+  color: var(--light-grey-i);
+  padding: 1rem;
 }
+div.profile-pic {
+  grid-area: profile-pic;
+}
+.profile {
+  grid-area: profile;
+  align-self: end;
+  text-align: left;
+  font: bold 1.15rem sans-serif;
+}
+.position {
+  grid-area: position;
+  justify-self: start;
+  color: var(--position-color);
+}
+.tabs blockquote {
+  grid-area: quote;
+  text-align: justify;
+  font: 1rem/1.5 serif;
+  padding: 1rem;
+  overflow: hidden;
+}
+blockquote::before, blockquote::after {
+  content: '"';
+}
+
 .tabs-btn {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  --square: 3.5rem;
+  --square: 2.5rem;
   width: var(--square);
   height:  var(--square);;
   border-radius: 50%;
   box-shadow: var(--botton-shadow);
+  color: var(--button-color);
 }
 /* position */
 .prev {
