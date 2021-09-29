@@ -6,6 +6,7 @@ Some personal html and css practices. I would like to enhance my css skill.
 2. [Dropdown](web/dropdown.html)
 3. [Contact Us form](web/contactUsForm.html)
 4. [Student Community Home Page](web/communityStudentHomePage.html)
+5. [Testimonials](web/testimonials.html)
 
 ## References
 
