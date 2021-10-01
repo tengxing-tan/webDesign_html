@@ -1,13 +1,12 @@
-<!-- TODO: 
-- profile, name, social media icon
-- button position -->
+<!-- HIGHLIGHT: I learn javascript by creating a slideshow effect in this project -->
 
-<!-- DONE: fix the line 139, top effect is unexpected -->
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>Testimonials</title>
+  <script src="https://kit.fontawesome.com/06b2bd9377.js" 
+crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- ================ html ==================== -->
@@ -16,38 +15,46 @@
   <section class="testimonials">
     <div class="mySlides">
       <div class=tabs>
-        <div class="profile-pic"></div>
+        <div class="profile-pic"><i class="fas fa-user-circle"></i></div>
         <p class="profile">Jonathan</p>
         <p class="position">CEO, abc copmpany</p>
         <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Phasellus id sagittis lacus. Nunc dictum fermentum leo, eleifend convallis neque 
-pulvinar ut. Integer porttitor eget neque vitae venenatis. Quisque pellentesque 
-est sem, sed suscipit felis sodales non. Phasellus ultricies ipsum laoreet, 
-auctor leo non, dignissim lectus. Vivamus ornare laoreet egestas. </blockquote>
+Phasellus id sagittis lacus.</blockquote>
+        <div class="social-icon">   
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-linkedin-in"></i>
+</div>
 </div>
     </div>
     <div class="mySlides">
       <div class=tabs>
-      <div class="profile-pic"></div>
+      <div class="profile-pic"><i class="fas fa-user-circle"></i></div>
         <p class="profile">Soon Kee Lim</p>
         <p class="position">CCO, abc copmpany</p>
         <blockquote>Suspendisse consectetur orci vel tortor tempor, in luctus 
-lectus aliquam. Cras aliquam semper cursus. Sed rutrum faucibus turpis. In 
-placerat ac justo id hendrerit. Quisque nec diam eget elit mollis tristique. Nam 
-posuere sodales metus et ullamcorper. Proin imperdiet sem ac rhoncus fermentum. 
-</blockquote>
+lectus aliquam. Cras aliquam semper cursus.</blockquote>
+        <div class="social-icon">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+      </div>
 </div>
     </div>
     <div class="mySlides">
       <div class=tabs>
-      <div class="profile-pic"></div>
+      <div class="profile-pic"><i class="fas fa-user-circle"></i></div>
         <p class="profile">Tan Teng Xing</p>
         <p class="position">CFO, abc copmpany</p>
         <blockquote>Nulla ut mauris ut sem finibus accumsan. In 
-ante ligula, porttitor vel odio vitae, gravida pharetra ex. Maecenas finibus, 
-ante et mattis pellentesque, orci augue tempor nunc, ac aliquam purus velit eget 
-metus. Quisque ante augue, placerat non nunc sit amet, vehicula finibus augue. 
-Nulla convallis diam tellus, ut iaculis nunc varius eu.</blockquote>
+ante ligula, porttitor vel odio vitae, gravida pharetra ex.</blockquote>
+        <div class="social-icon">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-linkedin-in"></i>
+</div>
+        </div>
 </div>
     </div>    
     <a class="prev tabs-btn" onclick="plusSlides(-1)">&#10094;</a>
@@ -60,6 +67,8 @@ Nulla convallis diam tellus, ut iaculis nunc varius eu.</blockquote>
 </footer>
 <!-- ================ css ==================== -->
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -81,13 +90,17 @@ main {
   --light-blue-i: #7ea1fb;
   --light-blue-ii: #496ffd;
   --light-grey-i: #acacac;
+  --dark-color: #3f3f3f;
 /*   categories   */
   --header-color: var(--light-blue-i);
   --main-bg: var(--super-light-blue);
   --button-color: var(--light-blue-i);
   --position-color: var(--light-blue-ii);
   --quote-color: var(--light-grey-i);
-
+  --profile-pic: var(--light-grey-i);
+  --profile-name: var(--dark-color);
+  --icon-color: var(--light-blue-i);
+  
   --tabs-shadow: 0 1.6rem 25px -16px #cdd2d2, 0 2rem 50px 4px #d9d9f4;
   --botton-shadow: 0 7px 10px -2px #acacac;
 }
@@ -97,6 +110,7 @@ main {
   line-height: 2.65rem;
   text-align: center;
   margin: 0 auto 5rem;
+  font-family: 'Manrope';
 }
 .header::before {
   content: "";
@@ -105,18 +119,14 @@ main {
   position: relative;
   top: 3rem;
   margin: 0 auto;
-  width: 5%;
-  animation: break-line-ani 1000ms 100ms ease-in;
+  animation: break-line-ani 500ms 100ms ease-in forwards;
 }
 @keyframes break-line-ani {
   from {
-    width: 0;
-  }
-  50% {
     width: 100%;
   }
   to {
-    width: 5%;
+    width: 10%;
   }
 }
 .testimonials {
@@ -137,8 +147,8 @@ main {
   grid: 
     "profile-pic profile" 2.5rem
     "profile-pic position" 2rem
-   "quote quote" 1fr
-   "icon icon" 1rem / 4.5rem 1fr;
+    "quote quote" 1fr
+    "icon icon" 2rem / 4.5rem 1fr;
   background: white;
   width: 25rem;
   height: 14.5rem;
@@ -149,19 +159,24 @@ main {
   color: var(--light-grey-i);
   padding: 1rem;
 }
-div.profile-pic {
+.profile-pic {
   grid-area: profile-pic;
+  align-self: end;
+  color: var(--profile-pic);
+  font-size: 3.5rem;
 }
 .profile {
   grid-area: profile;
   align-self: end;
   text-align: left;
   font: bold 1.15rem sans-serif;
+  color: var(--dark-color);
 }
 .position {
   grid-area: position;
   justify-self: start;
   color: var(--position-color);
+  font: 0.875rem/2.5 'Lora', arial;
 }
 .tabs blockquote {
   grid-area: quote;
@@ -173,7 +188,22 @@ div.profile-pic {
 blockquote::before, blockquote::after {
   content: '"';
 }
-
+.social-icon {
+  grid-area: icon;
+  justify-self: start;
+}
+.fab {
+  display: inline-block;
+  --square-icon: 1.5rem;
+  width: var(--square-icon);
+  height: var(--square-icon);
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--icon-color);
+  color: var(--icon-color);
+  font-size: small;
+  padding: 0.25rem;
+}
 .tabs-btn {
   background-color: white;
   display: flex;
