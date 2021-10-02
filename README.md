@@ -12,7 +12,7 @@ Some personal `HTML` and `CSS` practices.
 
 3. **Contact Form**
 
-[![Contact Us form screenshot](screenshot/contactUseForm.png)](web/contactUsForm.html)
+[![Contact Us form screenshot](screenshot/contactUsForm.png)](web/contactUsForm.html)
 
 4. **Student Community Home Page**
 [![Student Community Home Page screenshot](screenshot/communityStudentHomePage.png)](web/communityStudentHomePage.html)
