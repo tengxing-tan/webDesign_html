@@ -1,16 +1,29 @@
 # webDesign_html
 
-Some personal html and css practices. I would like to enhance my css skill.
+Some personal `HTML` and `CSS` practices.
 
-1. [Subscribe Newsletter](./web/subscribeNewsletter.html)
-2. [Dropdown](web/dropdown.html)
-3. [Contact Us form](web/contactUsForm.html)
-4. [Student Community Home Page](web/communityStudentHomePage.html)
-5. [Testimonials](web/testimonials.html)
+1. **Subscribe Newsletter**
+
+[![Subscribe Newsletter sceenshot](screenshot/subscribeNewsletter.png)](https://seventan1234.github.io/webDesign_html/web/subscribeNewsletter.html)
+
+2. **Dropdown**
+
+[![Dropdown screenshot](screenshot/dropdown.png)](https://seventan1234.github.io/webDesign_html/web/dropdown.html)
+
+3. **Contact Form**
+
+[![Contact Us form screenshot](screenshot/contactUseForm.png)](web/contactUsForm.html)
+
+4. **Student Community Home Page**
+[![Student Community Home Page screenshot](screenshot/communityStudentHomePage.png)](web/communityStudentHomePage.html)
+
+5. **Testimonials**
+
+[![Testimonials](screenshot/testimonials.png)](web/testimonials.html)
 
 ## References
 
-I am building webpage in HTML by referring design of a YouTube channel called "DesignSense". 
+I am building web page in HTML by referring design of a YouTube channel called "DesignSense". 
 
 These are references for me:
 
@@ -24,25 +37,25 @@ These are references for me:
 
 Apply to CSS
 
-**Lora** - 400, 700 
+*Lora* - 400, 700 
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 ```
 
-**Poppins** - 200, 500, 700 
+*Poppins* - 200, 500, 700 
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap');
 ```
 
-**Manrope** - 800 - Big Title
+*Manrope* - 800 - **Big Title**
 
 ````css
  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 ````
 
-**JetBrains Mono** - 400 - Button
+*JetBrains Mono* - 400 - **Button**
 
 ```css
  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
